@@ -5,11 +5,13 @@ services:
      IP: ${REDIS_CLUSTER_IP}
      SENTINEL: ${REDIS_USE_SENTINEL}
      STANDALONE: ${REDIS_USE_STANDALONE}
+     INITIAL_PORT: 7051
+     SENTINEL_PORT: 5011
     build:
       context: .
       args:
         redis_version: '5.0.7'
     hostname: server
     ports:
-      - '7000-7050:7000-7050'
-      - '5000-5010:5000-5010'
+      - '7051-7100:7051-7100'
+      - '5011-5020:5011-5020'

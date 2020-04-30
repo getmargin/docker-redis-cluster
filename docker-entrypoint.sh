@@ -14,8 +14,8 @@ if [ "$1" = 'redis-cluster' ]; then
     IP=${IP%% *} # use the first ip
     echo " -- IP After trim: '$IP'"
 
-    if [ -z "$INITIAL_PORT" ]; then # Default to port 7000
-      INITIAL_PORT=7000
+    if [ -z "$INITIAL_PORT" ]; then # Default to port 7051
+      INITIAL_PORT=7051
     fi
 
     if [ -z "$MASTERS" ]; then # Default to 3 masters

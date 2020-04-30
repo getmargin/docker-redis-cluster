@@ -1,3 +1,6 @@
+# Our Fork
+This fork of the docker-redis-cluster is to make it run on a different set of ports than the normal one. Since we need two versions of it to be able to run side-by-side on our local machines.
+
 # docker-redis-cluster
 
 [![Docker Stars](https://img.shields.io/docker/stars/grokzen/redis-cluster.svg)](https://hub.docker.com/r/grokzen/redis-cluster/)
