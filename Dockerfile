@@ -1,7 +1,7 @@
 # Build from commits based on redis:5
 FROM redis@sha256:90d44d431229683cadd75274e6fcb22c3e0396d149a8f8b7da9925021ee75c30
 
-LABEL maintainer="Johan Andersson <Grokzen@gmail.com>"
+LABEL maintainer="Corey Losenegger <corey@compound.co> -- forked from Johan Andersson <Grokzen@gmail.com>"
 
 # Some Environment Variables
 ENV HOME /root
