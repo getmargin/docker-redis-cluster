@@ -1,5 +1,5 @@
-# Build from commits based on redis:5
-FROM redis@sha256:90d44d431229683cadd75274e6fcb22c3e0396d149a8f8b7da9925021ee75c30
+# Build from commits based on redis:6
+FROM redis:6.0.8
 
 LABEL maintainer="Corey Losenegger <corey@compound.co> -- forked from Johan Andersson <Grokzen@gmail.com>"
 
@@ -9,9 +9,9 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Install system dependencies
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -yqq \
-      net-tools supervisor ruby rubygems locales gettext-base wget gcc make g++ build-essential libc6-dev tcl && \
-    apt-get clean -yqq
+  apt-get install --no-install-recommends -yqq \
+  net-tools supervisor ruby rubygems locales gettext-base wget gcc make g++ build-essential libc6-dev tcl && \
+  apt-get clean -yqq
 
 # # Ensure UTF-8 lang and locale
 RUN locale-gen en_US.UTF-8
@@ -23,11 +23,11 @@ ENV SSL_CERT_FILE=/usr/local/etc/openssl/cert.pem
 
 RUN gem install redis -v 4.1.3
 
-ARG redis_version=5.0.7
+ARG redis_version=6.0.8
 
 RUN wget -qO redis.tar.gz https://github.com/antirez/redis/archive/${redis_version}.tar.gz \
-    && tar xfz redis.tar.gz -C / \
-    && mv /redis-$redis_version /redis
+  && tar xfz redis.tar.gz -C / \
+  && mv /redis-$redis_version /redis
 
 RUN (cd /redis && make)
 
